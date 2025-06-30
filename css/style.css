@@ -358,7 +358,7 @@
   .about-info h6{
     font-size: 20px;
   }
-  .profile-info p,.about-info p{
+  .profile-info pre,.about-info p{
     font-size: 18px;
   }
 }
