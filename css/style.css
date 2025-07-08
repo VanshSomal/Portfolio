@@ -4,10 +4,12 @@
     padding: 0;
 }
 
-.body{
+body{
     font-family: Arial, Helvetica, sans-serif;
     background-color: #1d2549;
 }
+
+
 
 .main-container,
 .about,
@@ -50,7 +52,7 @@
 }
 
 .profile-info h1{
-    font-size: 55px;
+    font-size: 52px;
     font-weight: bold;
     color: #bdf347;
     margin-bottom: 20px;
@@ -285,6 +287,7 @@
   color: black;
   padding: 20px 0;
   text-align: center;
+  margin-top: 20px;
    /* position: sticky; */
   /* top: 0; */
   /* z-index: 1020; */
@@ -296,6 +299,9 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  justify-content:space-between ;
+  align-items: center;
 }
 
 .header-home a{
