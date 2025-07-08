@@ -8,18 +8,24 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/theme.css" />
 </head>
 
-<body class="body">
+<body class="dark-mode">
+    <button id="modeToggle" class="mode-toggle-btn">☀️ Light Mode</button>
+
     <header class="site-header">
         <div class="header-content">
-            <li class="header-home"><a href="#home">Portfolio</a></li>
+            <div class="header-home">
+                <li class="header-home"><a href="#home">Portfolio</a></li>
+            </div>
             <ul class="header-links">
                 <li><a href="#About">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+
         </div>
     </header>
     <div class="main-container" id="home">
@@ -30,7 +36,7 @@
             <h1>Hi, I am Vansh Somal</h1>
             <hr>
             <pre>Computer Science major at GTBIT.
-Intereted in user friendly interface and
+Interested in user friendly interface and
 web development.</pre>
 
 
@@ -138,13 +144,16 @@ web development.</pre>
         <div class="contact-us">
             <div class="contact-box" id="contact">
                 <h2>Contact</h2>
-                <form>
+                <!-- <form action="https://formspree.io/f/mrbkvqwv" method="post"> -->
+                <!-- <form action="https://getform.io/f/bvrynnlb" method="post"> -->
+                <!-- <form action="https://formsubmit.io/send/vanshsomal20@gmail.com" method="post"> -->
+                <form id="contact-form">
                     <h5>Your Name</h5>
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" name="name" placeholder="Your Name" required>
                     <h5>Your Email</h5>
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
                     <h5>Enter Your Message</h5>
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
                     <button type="submit">Send</button>
                 </form>
             </div>
@@ -159,7 +168,8 @@ web development.</pre>
                     <a href="https://Instagram.com/ivanshsomal" target="_blank">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/vansh-somal-b3b6542a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm" target="_blank">
+                    <a href="https://www.linkedin.com/in/vansh-somal-b3b6542a5?utm_source=share&utm_campaign=share_via&utm_content=profile&utm"
+                        target="_blank">
                         <i class="fab fa-linkedin"></i>
                     </a>
                     <a href="https://github.com/VanshSomal" target="_blank">
@@ -169,6 +179,29 @@ web development.</pre>
             </ul>
         </div>
     </footer>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS with your User ID
+        (function () {
+            emailjs.init("u5N2IuI9sHUurWlby"); // Get this from the dashboard
+        })();
+
+        // Handle form submission
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs.sendForm("service_xxbk938", "template_crzfqdi", this)
+                .then(function () {
+                    alert("Message sent successfully!");
+                }, function (error) {
+                    alert("Failed to send message. Please try again.");
+                    console.log(error);
+                });
+        });
+    </script>
+
+
 </body>
 
 </html>
