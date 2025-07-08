@@ -367,4 +367,6 @@ body{
   .profile-info pre,.about-info p{
     font-size: 18px;
   }
+    .header-home a{
+        font-size: 20px;
 }
