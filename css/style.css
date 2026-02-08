@@ -21,10 +21,31 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 200px;
-    padding: 80px;
+    gap: 80px;
+    padding: 60px 40px;
     min-height: 100vh;
     flex-wrap: wrap; /* added for responsiveness*/
+}
+@media (max-width: 768px) {
+  .main-container,
+  .about,
+  .education,
+  .skills,
+  .volunteer,
+  .testimonials,
+  .contact-us {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 16px;
+    gap: 40px;
+    min-height: auto;
+  }
+    .profile-info h1 {
+    white-space: normal;
+    width: auto;
+    animation: none;
+    text-align: center;
+  }
 }
 
 .profile-img img,
@@ -370,3 +391,4 @@ body{
     .header-home a{
         font-size: 20px;
 }
+
