@@ -68,19 +68,31 @@ body {
 }
 
 /* =========================
-   HERO SECTION
+   HERO SECTION FIX (IMPORTANT)
+   Fix Resume button overlap
+========================= */
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* =========================
+   HERO HEADING
 ========================= */
 .profile-info h1 {
   font-size: 52px;
   font-weight: bold;
   color: #bdf347;
-  margin-bottom: 20px;
 
   /* typing animation (desktop only) */
   width: 28ch;
   white-space: nowrap;
   overflow: hidden;
   animation: typing 2s steps(20) infinite alternate;
+
+  /* remove margin because flex gap is used */
+  margin: 0;
 }
 
 @keyframes typing {
@@ -92,26 +104,20 @@ body {
   }
 }
 
-/* IMPORTANT:
-   pre causes overflow on mobile
-   so we force it to wrap */
-/* .profile-info pre {
-  font-size: 25px;
-  color: whitesmoke;
-  margin-bottom: 30px;
-  line-height: 1.5;
-  white-space: pre-wrap;
-  word-break: break-word;
-  overflow-wrap: break-word;
-  max-width: 100%;
-} */
+/* =========================
+   HERO TEXT
+========================= */
 .profile-info p {
   font-size: 25px;
   color: whitesmoke;
-  margin-bottom: 30px;
   line-height: 1.5;
-}
 
+  /* IMPORTANT: stop overlap */
+  margin: 0;
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
 
 /* =========================
    BUTTON
@@ -124,7 +130,10 @@ body {
   font-weight: 600;
   border-radius: 5px;
   transition: all 0.3s ease;
+
+  /* FIX: button always comes below text */
   display: inline-block;
+  width: fit-content;
 }
 
 .btn:hover {
@@ -401,9 +410,13 @@ body {
     text-align: center;
   }
 
-  .profile-info pre,
-  .about-info p {
+  .profile-info p {
     font-size: 18px;
+  }
+
+  /* Center resume button on mobile */
+  .btn {
+    margin: 0 auto;
   }
 
   .profile-img img,
@@ -442,4 +455,3 @@ body {
     width: 100%;
   }
 }
-
